@@ -372,7 +372,9 @@ $(function() {
 	})
 	$(document).on('click', function() {
 		$('.header--basket, .header--search').removeClass('is-active');
-		hideMobileMenu();
+		if ( !$('[data-target]').hasClass('is-active') ) {
+			hideMobileMenu();
+		}
 	});
 	$(document).on('click', '.header--link_basket, .header--basket, .header--link_search, .header--search, .menu-open, .nav, [data-open]', function(e) {
 		e.stopPropagation();
